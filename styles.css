@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.topleft {
+    position: fixed;
+    top: 0;
+}
+
+.nav {
+    background-color: HighlightText;
+    width: 10em;
+}
+
+

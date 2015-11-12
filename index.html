@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="PHPAngularJSDemo">
+<head>
+    <title>Sanjay's PHP/AngularJS</title>
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" data-require="jquery@2.1.1" data-semver="2.1.1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js" data-require="angular.js@1.4.7" data-semver="1.4.7"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<body>
+ 
+    <div ng-controller="firstController as firstCtrl">
+        
+        <div class="topleft">
+            <button type="button" class="btn btn-default" aria-label="Menu" ng-click="firstCtrl.toggle()">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </button>
+            <div class="navmenu">
+                <ul ng-show="firstCtrl.navOpen" class="nav nav-pills nav-stacked">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">ContactUs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <br/><br/>
+        <h3>Straight output of a table queried from a MySQL database</h3>
+        <p style="color:purple" ng-repeat="data in firstCtrl.tableData">
+            {{data.col1}}
+        </p>
+        <p>{{firstCtrl.noData}}</p>
+        <br /><br />
+        <div ng-controller="secondController as secondCtrl">
+            <p style="color: red">{{secondCtrl.test1}}</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="services/dataService.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
